@@ -1,0 +1,88 @@
+.cards-info-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Estilos para el contenedor de las tarjetas */
+}
+
+.card-info-transition-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+  /* Estilos para la transición de entrada de la tarjeta */
+}
+
+.card-info-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+  /* Estilos para la tarjeta durante la transición de entrada */
+}
+
+.card-info-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+  /* Estilos para la transición de salida de la tarjeta */
+}
+
+.card-info-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 500ms, transform 500ms;
+  /* Estilos para la tarjeta durante la transición de salida */
+}
+
+.card-info {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 400px; /* Ajusta el ancho máximo de las tarjetas según tu preferencia */
+  width: 100%; /* Hace que las tarjetas ocupen el ancho disponible dentro del contenedor */
+  /* Estilos para las tarjetas en general */
+  background-color: #111;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  position: relative; /* Agregado para posicionar correctamente el pseudo-elemento */
+}
+
+.card-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
+
+.card-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  line-height: 1.4;
+}
+
+.card-info-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-info-button:hover {
+  background-color: #ccc;
+}
+
+.card-info-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #000;
+}
