@@ -6,8 +6,22 @@ import "../styles/pages/CardPage.css";
 import { motion } from "framer-motion";
 
 const CardsPage = () => {
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [cards, setCards] = useState(cardData);
 
+  const goToNextCard = () => {
+    setCurrentCardIndex((prevIndex) => {
+      const newIndex = prevIndex + 1;
+      return newIndex < cards.length ? newIndex : prevIndex;
+    });
+  };
+
+  const goToBackCard = () => {
+    setCurrentCardIndex((prevIndex) => {
+      const newIndex = prevIndex - 1;
+      return newIndex >= 0 ? newIndex : prevIndex;
+    });
+  };
   const removeCard = (id) => {
     setCards(cards.filter((card) => card.id !== id));
   };
@@ -29,14 +43,20 @@ const CardsPage = () => {
         }}
       >
         <div className="cards-info-page">
-          {cards.map((card) => (
-            <CardInfo
-              key={card.id}
-              title={card.title}
-              content={card.content}
-              onRemove={() => removeCard(card.id)}
-            />
-          ))}
+          <CardInfo
+            key={cards[currentCardIndex].id}
+            title={cards[currentCardIndex].title}
+            content={cards[currentCardIndex].content}
+            onRemove={() => removeCard(cards[currentCardIndex].id)}
+          />
+          <div className="button-container">
+            <button className="button-card-back" onClick={goToBackCard}>
+              Anterior tarjeta
+            </button>
+            <button className="button-card-next" onClick={goToNextCard}>
+              Siguiente tarjeta
+            </button>
+          </div>
         </div>
       </div>
     </motion.div>
