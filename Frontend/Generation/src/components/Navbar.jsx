@@ -1,6 +1,6 @@
-import { AiOutlinePlayCircle, AiOutlinePauseCircle } from "react-icons/ai";
-import useMusicPlayer from "../musicPlayer.js";
-import musicURL from "../utils/music.mp3";
+// import { AiOutlinePlayCircle, AiOutlinePauseCircle } from "react-icons/ai";
+// import useMusicPlayer from "../musicPlayer.js";
+// import musicURL from "../utils/music.mp3";
 import "../styles/components/NavBar.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,21 +10,21 @@ function NavBar() {
   const handleButtonClick = () => {
     navigate("/"); // Reemplaza "/otra-ruta" con la ruta a la que deseas redirigir
   };
-  const { setVolume, playMusic, pauseMusic, volume, isPlaying } =
-    useMusicPlayer(musicURL);
+  // const { setVolume, playMusic, pauseMusic, volume, isPlaying } =
+  //   useMusicPlayer(musicURL);
 
-  const handleVolumeChange = (event) => {
-    const newVolume = event.target.value;
-    setVolume(newVolume);
-  };
+  // const handleVolumeChange = (event) => {
+  //   const newVolume = event.target.value;
+  //   setVolume(newVolume);
+  // };
 
-  const handleTogglePlay = () => {
-    if (isPlaying) {
-      pauseMusic();
-    } else {
-      playMusic();
-    }
-  };
+  // const handleTogglePlay = () => {
+  //   if (isPlaying) {
+  //     pauseMusic();
+  //   } else {
+  //     playMusic();
+  //   }
+  // };
 
   return (
     <div className="navbar">
@@ -32,15 +32,15 @@ function NavBar() {
         Inicio
       </button>
       <div className="controlsContainer">
-        <div className="playButton" onClick={handleTogglePlay}>
+        {/* <div className="playButton" onClick={handleTogglePlay}>
           {isPlaying ? (
             <AiOutlinePauseCircle className="playIcon" />
           ) : (
             <AiOutlinePlayCircle className="playIcon" />
           )}
-        </div>
+        </div> */}
 
-        <div className="volumeControl">
+        {/* <div className="volumeControl">
           <input
             type="range"
             min="0"
@@ -48,7 +48,7 @@ function NavBar() {
             value={volume}
             onChange={handleVolumeChange}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
