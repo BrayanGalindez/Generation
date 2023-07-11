@@ -8,7 +8,7 @@ function NavBar() {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/inicio"); // Reemplaza "/otra-ruta" con la ruta a la que deseas redirigir
+    navigate("/"); // Reemplaza "/otra-ruta" con la ruta a la que deseas redirigir
   };
   const { setVolume, playMusic, pauseMusic, volume, isPlaying } =
     useMusicPlayer(musicURL);
