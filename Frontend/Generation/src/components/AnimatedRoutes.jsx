@@ -8,8 +8,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" />
-        <Route path="inicio" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="informacion" element={<CardPage />} />
       </Routes>
     </AnimatePresence>
