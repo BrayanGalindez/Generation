@@ -1,5 +1,5 @@
 import { AiOutlinePlayCircle, AiOutlinePauseCircle } from "react-icons/ai";
-import useMusicPlayer from "../musicPlayer";
+import useMusicPlayer from "../musicPlayer.js";
 import musicURL from "../utils/music.mp3";
 import "../styles/components/NavBar.css";
 import { useNavigate } from "react-router-dom";
