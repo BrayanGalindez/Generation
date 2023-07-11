@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Estilos para el contenedor de las tarjetas */
+  justify-content: center;
+  height: 100vh; /* Ajusta la altura del contenedor según tus necesidades */
 }
 
 .card-info-transition-enter {
@@ -67,8 +68,22 @@
 .card-info p {
   line-height: 1.4;
 }
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-.card-info-button {
+.button-card-next {
+  margin: 10px;
+}
+
+.button-card-back {
+  margin: 10px;
+}
+
+.button-card-next,
+.button-card-back {
   padding: 10px 20px;
   background-color: #fff;
   color: #000;
@@ -78,11 +93,13 @@
   cursor: pointer;
 }
 
-.card-info-button:hover {
+.button-card-next:hover,
+.button-card-back:hover {
   background-color: #ccc;
 }
 
-.card-info-button:focus {
+.button-card-next:focus,
+.button-card-back:focus {
   outline: none;
   box-shadow: 0 0 0 2px #000;
 }
