@@ -1,6 +1,6 @@
 // import useMusicPlayer from "./musicPlayer";
 // import musicURL from "../src/utils/music.mp3";
-// import NavBar from "./components/Navbar";
+import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <NavBar /> */}
+      <NavBar />
       <AnimatedRoutes />
       <Footer />
     </div>
